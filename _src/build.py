@@ -42,6 +42,11 @@ CHECK = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='
          "%3E%3Cpath fill='none' stroke='%2336a7da' stroke-width='3' stroke-linecap='round'"
          " stroke-linejoin='round' d='M5 13l4 4L19 7'/%3E%3C/svg%3E")
 
+import urllib.parse
+WA_NUM  = '972544668462'
+WA_TEXT = urllib.parse.quote('היי, הגעתי מעמוד הבתים החדשים בטקסס ואשמח לשמוע עוד פרטים')
+WA_LINK = f'https://wa.me/{WA_NUM}?text={WA_TEXT}'
+
 # ---------- תוכן ----------
 intro = [
  ("lead","אנחנו קבוצת יזמים עצמאית הפועלת בנדל״ן בישראל למעלה מחמש עשרה שנה. לאורך הדרך הקמנו וניהלנו חברות נדל״ן, ליווינו מאות משפחות ומשקיעים, והובלנו תהליכים מורכבים משלב איתור הקרקע והתכנון, דרך מימון, ביצוע ופיקוח, ועד אכלוס וניהול נכסים."),
@@ -132,6 +137,11 @@ HTML = f"""<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1E7F8WCWF"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+gtag('js',new Date());gtag('config','G-S1E7F8WCWF',{{page_title:'Texas Investors'}});
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#143a46">
@@ -198,6 +208,12 @@ font-weight:700;font-size:17px;text-decoration:none;transition:transform .12s}}
 .disclaimer h3{{font-size:13px;color:var(--body);margin-bottom:8px;font-weight:700;letter-spacing:.3px}}
 footer{{background:var(--teal-deep);color:#9fc0cb;text-align:center;font-size:12.5px;padding:22px;line-height:1.8}}
 footer b{{color:#e6f1f4;font-weight:600}}
+.wa-fab{{position:fixed;bottom:18px;right:18px;width:54px;height:54px;border-radius:50%;
+background:#25d366;display:flex;align-items:center;justify-content:center;z-index:90;
+box-shadow:0 6px 18px rgba(7,94,84,.35);transition:transform .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent}}
+.wa-fab:hover{{transform:scale(1.06);box-shadow:0 9px 24px rgba(7,94,84,.45)}}
+.wa-fab:active{{transform:scale(.95)}}
+.wa-fab svg{{width:30px;height:30px}}
 @media(min-width:600px){{figure img{{height:300px}} body{{font-size:18.5px}}}}
 @media print{{.progress,.topbar,.cta .btns{{display:none}} .hero{{min-height:auto}} section{{break-inside:avoid}}}}
 </style>
@@ -242,8 +258,8 @@ footer b{{color:#e6f1f4;font-weight:600}}
   <h2>רוצים להעמיק במספרים?</h2>
   <p>שני כלים אינטראקטיביים שבנינו כדי ללוות את הבדיקה:</p>
   <div class="btns">
-    <a class="btn solid" href="https://yossisamia-bot.github.io/prop-compare/" target="_blank" rel="noopener">מחשבון השוואת השקעה</a>
-    <a class="btn solid" href="https://yossisamia-bot.github.io/houston-map/" target="_blank" rel="noopener">מפת ההשקעות ביוסטון</a>
+    <a class="btn solid" href="https://yossisamia-bot.github.io/prop-compare/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'calculator'}})">מחשבון השוואת השקעה</a>
+    <a class="btn solid" href="https://yossisamia-bot.github.io/houston-map/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'map'}})">מפת ההשקעות ביוסטון</a>
   </div>
 </div>
 
@@ -252,6 +268,10 @@ footer b{{color:#e6f1f4;font-weight:600}}
   <p>{disclaimer}</p>
 </div>
 <footer><b>Aspect Boutique Investments</b> &nbsp;×&nbsp; <b>PrimeVest Realty</b><br>המסמך מיועד לנמענים רלוונטיים בלבד</footer>
+
+<a class="wa-fab" href="{WA_LINK}" target="_blank" rel="noopener" aria-label="דברו איתנו בוואטסאפ" onclick="gtag('event','whatsapp_click')">
+<svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.73-1.08-4.46-3.86-4.6-4.04-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.95-2.25.24-.27.53-.34.71-.34.18 0 .35 0 .51.01.16.01.39-.06.6.46.24.58.81 2 .88 2.14.07.14.12.31.02.49-.09.18-.14.29-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.12.07.66-.17 1.32z"/></svg>
+</a>
 
 <script>
 var pg=document.getElementById('pg');
