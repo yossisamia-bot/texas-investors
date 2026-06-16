@@ -4,7 +4,7 @@
 מותג: Aspect Boutique Investments × PrimeVest Realty.
 
 - `index.html` - קובץ עצמאי אחד (כל התמונות והלוגואים מוטמעים ב-base64, ~880KB).
-- חי ב-GitHub Pages: https://yossisamia-bot.github.io/texas-investors/
+- חי: **https://texas.primevest-realty.com/** (דומיין מותג; קובץ `CNAME` ברפו, תת-דומיין על דומיין החברה ב-Wix). `yossisamia-bot.github.io/texas-investors/` מפנה אליו ב-301.
 - `noindex, nofollow` - לא נסרק ע"י גוגל; שיתוף בלינק ישיר בלבד (תואם לדיסקליימר "לא להפצה פומבית").
 
 ## עדכון תוכן
