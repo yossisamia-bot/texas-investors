@@ -36,8 +36,10 @@ gap:14px;padding:9px 20px}
 letter-spacing:.4px;padding:5px 12px;border-radius:30px;margin-bottom:14px}
 .hero h1{font-size:clamp(27px,7.2vw,40px);line-height:1.22;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.5px}
 .hero .sub{font-size:18px;color:#d4e6ec;font-weight:400}
-.hero .dl{display:inline-flex;align-items:center;gap:7px;margin-top:17px;padding:8px 16px;border:1.5px solid rgba(255,255,255,.5);border-radius:30px;color:#fff;text-decoration:none;font-size:14.5px;font-weight:600;transition:background .15s}
-.hero .dl:hover{background:rgba(255,255,255,.12)} .hero .dl svg{width:15px;height:15px}
+.hero .dlrow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:17px}
+.hero .dlrow .lbl{color:#d4e6ec;font-size:14px;font-weight:600}
+.hero .dl{display:inline-flex;align-items:center;gap:6px;padding:7px 15px;border:1.5px solid rgba(255,255,255,.5);border-radius:30px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;transition:background .15s}
+.hero .dl:hover{background:rgba(255,255,255,.12)} .hero .dl svg{width:14px;height:14px}
 main{max-width:var(--maxw);margin:0 auto;padding:0 22px}
 section{padding:34px 0;border-bottom:1px solid var(--line)}
 h2{font-size:clamp(21px,5.6vw,27px);color:var(--teal);font-weight:800;line-height:1.3;
@@ -98,7 +100,10 @@ background:#2a8c5e;color:#fff;font-weight:600;font-size:15.5px;text-decoration:n
     <span class="eyebrow">Aspect × PrimeVest Realty</span>
     <h1>בתים חדשים מקבלנים<br>ציבוריים בטקסס</h1>
     <div class="sub">כיצד הגענו למודל, ומה מצאנו בדרך</div>
-    <a class="dl" href="presentation.docx" download="מצגת משקיעים - בתים חדשים בטקסס.docx" onclick="gtag('event','download_doc')"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>הורדת המסמך (DOCX)</a>
+    <div class="dlrow"><span class="lbl">הורדת המסמך:</span>
+      <a class="dl" href="presentation.pdf" download="מצגת משקיעים - בתים חדשים בטקסס.pdf" onclick="gtag('event','download_doc',{format:'pdf'})"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</a>
+      <a class="dl" href="presentation.docx" download="מצגת משקיעים - בתים חדשים בטקסס.docx" onclick="gtag('event','download_doc',{format:'docx'})"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Word</a>
+    </div>
   </div>
 </div>
 
