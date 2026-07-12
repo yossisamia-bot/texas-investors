@@ -44,6 +44,11 @@ STREET      = b64_img('image5.jpg', max_w=1100, quality=72)  # new-home street
 # הדמיית הבית (Zillow) - מטושטשת, רקע ל-CTA של העמוד המקוצר בלבד (החלטת יוסי 12/07:
 # הדמיות חצי-כוח, לא מדגישים - אווירה בלבד)
 Z_CTA_BLUR  = b64_img('zillow-cta-blur.jpg', max_w=900, quality=70)
+# הדמיות ריאליסטיות של יוסי (Gemini, 12/07) - תמונות המקטעים של העמוד המקוצר
+GEN_STREET  = b64_img('gen-street.jpg', max_w=1100, quality=74)   # רחוב שכונתי רחב
+GEN_PANO    = b64_img('gen-pano.jpg', max_w=1200, quality=74)     # פנורמת שכונה + דגלים
+GEN_HOUSE1  = b64_img('gen-house1.jpg', max_w=900, quality=76)    # חזית בית חד-משפחתי
+GEN_HOUSE2  = b64_img('gen-house2.jpg', max_w=900, quality=76)    # בית פינתי דו-קומתי
 
 CHECK = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'"
          "%3E%3Cpath fill='none' stroke='%2336a7da' stroke-width='3' stroke-linecap='round'"
@@ -374,6 +379,8 @@ border-radius:14px;padding:14px 16px}
 .cta{position:relative;overflow:hidden}
 .cta img.ctabg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32}
 .cta>*{position:relative}
+figure.pano img{height:130px}
+@media(min-width:600px){figure.pano img{height:175px}}
 .hero{min-height:auto}
 .hero .in{padding:32px 22px 28px}
 .hero h1{font-size:clamp(28px,7vw,50px)}
@@ -426,14 +433,16 @@ HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים
   <section><h2>המודל בקצרה</h2>{paras([('lead', s_model_pre[0])] + [('', p) for p in s_model_pre[1:]])}
     {cards(s_model_bullets)}
     <div style="margin-top:16px">{paras(s_model_post)}</div>
-    <figure><img src="{AERIAL}" alt="שכונה חדשה ומתוכננת באזור יוסטון"></figure></section>
-  <section><h2>למה טקסס, ולמה דווקא עכשיו</h2>{paras(s_whytx)}</section>
+    <figure><img src="{GEN_STREET}" alt="רחוב בשכונת בתים חדשים באזור יוסטון"></figure></section>
+  <section><h2>למה טקסס, ולמה דווקא עכשיו</h2>{paras(s_whytx)}
+    <figure class="pano"><img src="{GEN_PANO}" alt="כניסה לשכונת בתים חדשים בטקסס"></figure></section>
   <section><h2>למה בית חדש</h2>
     <p>{s_new_intro}</p>{cards(s_new_bullets)}
-    <figure><img src="{STREET}" alt="רחוב בשכונת בתים חדשים"></figure>
+    <figure><img src="{GEN_HOUSE1}" alt="חזית בית חד-משפחתי חדש"></figure>
     <p style="margin-top:18px">{s_new_close}</p></section>
   <section><h2>איך זה עובד בפועל</h2><p>{s_steps_intro}</p>{stepslist(s_steps)}
-    <div class="callout">{s_steps_close}</div></section>
+    <div class="callout">{s_steps_close}</div>
+    <figure><img src="{GEN_HOUSE2}" alt="בית חדש בפינת רחוב בשכונה מתפתחת"></figure></section>
   <section><h2>כמה דברים שחשוב לקחת בחשבון</h2><div class="note">{paras(s_consider)}</div></section>
 </main>
 
