@@ -198,7 +198,7 @@ background:#2a8c5e;color:#fff;font-weight:600;font-size:15.5px;text-decoration:n
 @media print{{.progress,.topbar,.cta .btns{{display:none}} .hero{{min-height:auto}} section{{break-inside:avoid}}}}
 """
 
-def page_head(title, ga_page_title):
+def page_head(title, ga_page_title, extra_css=''):
     return f"""<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -215,7 +215,7 @@ gtag('js',new Date());gtag('config','G-S1E7F8WCWF',{{page_title:'{ga_page_title}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>{CSS}</style>
+<style>{CSS}{extra_css}</style>
 </head>"""
 
 TOPBAR = f"""<header class="topbar"><div class="in">
@@ -350,7 +350,22 @@ s_disclaimer    = SS['גילוי נאות ודיסקליימר']['pre'][0]
 
 FULL_URL = 'https://texas.primevest-realty.com/'
 
-HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים בטקסס - בקצרה | Aspect × PrimeVest', 'Texas Investors Short')}
+# טיפוגרפיה מוגדלת לעמוד המקוצר (מכויל לפי ההשוואה מול yw-abi 12/07/2026:
+# כותרות גדולות יותר, מקטעים מרווחים יותר, עמודה מעט רחבה יותר בדסקטופ; הטקסט הרץ כבר גדול משלו)
+CSS_SHORT = """
+:root{--maxw:740px}
+.hero h1{font-size:clamp(30px,7.5vw,54px)}
+.hero .sub{font-size:clamp(18px,4.6vw,22px)}
+h2{font-size:clamp(24px,6vw,36px)}
+p.lead{font-size:clamp(19.5px,5vw,22px)}
+section{padding:42px 0}
+ul.cards li{font-size:17px;line-height:1.75}
+ol.steps li{font-size:17px;line-height:1.75}
+.callout,.note{font-size:17.5px}
+@media(min-width:600px){section{padding:56px 0} figure img{height:340px}}
+"""
+
+HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים בטקסס - בקצרה | Aspect × PrimeVest', 'Texas Investors Short', CSS_SHORT)}
 <body>
 <div class="progress" id="pg"></div>
 {TOPBAR}
