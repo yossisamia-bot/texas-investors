@@ -367,15 +367,19 @@ ol.steps li{font-size:17px;line-height:1.75}
 border-radius:14px;padding:14px 16px}
 .gold b{display:block;color:var(--teal);font-size:clamp(16px,4.2vw,19px);line-height:1.35;margin-bottom:5px}
 .gold span{font-size:14.5px;color:var(--body);line-height:1.6;display:block}
-@media(min-width:600px){section{padding:56px 0} figure img{height:340px} .gold{gap:14px} .gold div{padding:17px 19px}}
+@media(min-width:600px){section{padding:56px 0} figure img{height:340px}
+.gold{gap:14px;grid-template-columns:1fr 1fr 1fr} .gold div{padding:17px 19px}}
 """
 
-# כרטיסי הזהב למסך הפתיחה (הנוסח המלוטש, הווריאציות המומלצות - 12/07/2026)
+# כרטיסי הזהב למסך הפתיחה (סט הזהב של יוסי 12/07/2026 - 6 כרטיסים, כלום לא נגרע:
+# ה-$90K מוזג לכרטיס המימון-ברכישה)
 GOLD_CARDS = """<div class="gold">
-  <div><b>הון עצמי סביב $90K</b><span>היתרה נבחנת במימון על שם ה-LLC, בכפוף לאישור מלווה</span></div>
-  <div><b>בית חדש, בנוי ומוכן</b><span>נכס קיים שאפשר לבדוק, לממן ולהעביר לניהול</span></div>
-  <div><b>בעלות עצמאית, לא קרן</b><span>ה-LLC בבעלות המשקיע, והבית רשום על שם החברה</span></div>
-  <div><b>שכונות נבחרות בצמיחה</b><span>לפי ביקוש לשכירות, תעסוקה, נגישות והמשך אכלוס</span></div>
+  <div><b>בית חדש בנוי - מקבלן ציבורי ענק</b><span>קבלן נסחר בבורסה; נכס מוכן שאפשר לבדוק, לממן ולאכלס</span></div>
+  <div><b>מימון עד 70% כבר ברכישה</b><span>משכנתא על שם ה-LLC בקנייה עצמה, לא ריפייננס - הון עצמי סביב $90K, בכפוף לאישור מלווה</span></div>
+  <div><b>חד-משפחתי, לא תלוי באחרים</b><span>בית שלם בבעלות אחת - בלי שותפים ובלי תלות במשקיעים אחרים</span></div>
+  <div><b>ניהול ותיווך, עם דובר עברית</b><span>מוצאים שוכר ומנהלים בשטח; נציג דובר עברית מגיע לישראל באופן קבוע</span></div>
+  <div><b>אוטונומיה מלאה: LLC וחשבון פרטיים</b><span>חברה וחשבון בנק בבעלות המשקיע - לא קרן ולא קופה משותפת</span></div>
+  <div><b>שכונות נבחרות בצמיחה</b><span>ביקוש לשכירות, תעסוקה, נגישות והמשך אכלוס</span></div>
 </div>"""
 
 HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים בטקסס - בקצרה | Aspect × PrimeVest', 'Texas Investors Short', CSS_SHORT)}
