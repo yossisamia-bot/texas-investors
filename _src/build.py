@@ -231,9 +231,9 @@ TOPBAR = f"""<header class="topbar"><div class="in">
   <img class="p" src="{LOGO_PRIME}" alt="PrimeVest Realty">
 </div></header>"""
 
-def hero_block(sub, extra=''):
+def hero_block(sub, extra='', bg=None, bg_alt='Houston skyline'):
     return f"""<div class="hero">
-  <img class="bg" src="{HERO}" alt="Houston skyline">
+  <img class="bg" src="{bg or HERO}" alt="{bg_alt}">
   <div class="gr"></div>
   <div class="in">
     <span class="eyebrow">Aspect × PrimeVest Realty</span>
@@ -426,14 +426,13 @@ HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים
 <div class="progress" id="pg"></div>
 {TOPBAR_SHORT}
 
-{hero_block('בית בנוי, בעלות עצמאית ותהליך מסודר', HERO_BTNS)}
+{hero_block('בית בנוי, בעלות עצמאית ותהליך מסודר', HERO_BTNS, bg=GEN_STREET, bg_alt='רחוב בשכונת בתים חדשים באזור יוסטון')}
 
 <main>
   <section id="brief" style="padding-top:26px">{GOLD_CARDS}</section>
   <section><h2>המודל בקצרה</h2>{paras([('lead', s_model_pre[0])] + [('', p) for p in s_model_pre[1:]])}
     {cards(s_model_bullets)}
-    <div style="margin-top:16px">{paras(s_model_post)}</div>
-    <figure><img src="{GEN_STREET}" alt="רחוב בשכונת בתים חדשים באזור יוסטון"></figure></section>
+    <div style="margin-top:16px">{paras(s_model_post)}</div></section>
   <section><h2>למה טקסס, ולמה דווקא עכשיו</h2>{paras(s_whytx)}
     <figure class="pano"><img src="{GEN_PANO}" alt="כניסה לשכונת בתים חדשים בטקסס"></figure></section>
   <section><h2>למה בית חדש</h2>
