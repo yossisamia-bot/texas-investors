@@ -82,9 +82,18 @@ background:#2a8c5e;color:#fff;font-weight:600;font-size:15.5px;text-decoration:n
 @media(min-width:900px){
 .topbar .in{padding:12px 20px}
 .topbar img.a{height:32px} .topbar img.p{height:40px}
-.hero{height:46vh;min-height:420px;max-height:560px}
+.hero{height:40vh;min-height:380px;max-height:500px}
 }
 .tb-center{justify-content:center;gap:34px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.stats>div{background:var(--tint);border:1px solid var(--line);border-right:4px solid var(--blue);
+border-radius:14px;padding:15px 16px}
+.stats b{display:block;color:var(--teal);font-size:clamp(17px,4.6vw,21px);margin-bottom:4px}
+.stats span{font-size:14px;color:var(--body);line-height:1.55;display:block}
+.src{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:10px}
+.src a{color:var(--blue)}
+h3.subhead{font-size:clamp(18px,4.8vw,22px);color:var(--teal);margin:26px 0 10px;font-weight:800}
+@media(min-width:600px){.stats{grid-template-columns:1fr 1fr 1fr 1fr}}
 @media print{.progress,.topbar,.cta .btns{display:none} .hero{min-height:auto} section{break-inside:avoid}}
 </style>
 </head>
@@ -154,6 +163,63 @@ background:#2a8c5e;color:#fff;font-weight:600;font-size:15.5px;text-decoration:n
   <section><h2>איך ממשיכים מכאן</h2><p>מי שמרגיש שהמודל מתאים לו, עובר לשלב מעשי יותר: הגדרת מסגרת השקעה, בחינת מספרים ראשונית, החלטה אם להתקדם להקמת התשתית, ולאחר מכן הקמת LLC, פתיחת חשבון, בחירת נכס וסגירה.</p>
 <p>בשלב הבא נרכז עבור המשקיע רשימת פעולות קצרה וברורה: מסמכי זיהוי, כתובת מגורים באנגלית, פתיחת חברה וחשבון, העברת הון ראשוני, ולאחר מכן בחינת נכס ספציפי עם פרופורמה, תנאי עסקה ולוחות זמנים. מטרת המסמך הנוכחי היא לא להחליף את השלב הזה, אלא לאפשר להבין את ההיגיון שלפניו.</p>
 <p>בסופו של דבר, הסיבה שבחרנו במסלול הזה פשוטה: מתוך מסלולים רבים שבחנו לאורך השנים, זהו אחד הבודדים שהצליח לשלב בעלות עצמאית, שליטה, פשטות יחסית, אפשרות למימון ותשתית ניהול מסודרת. לא משום שהוא מושלם, אלא משום שהוא נראה לנו הגיוני.</p></section>
+  <section id="numbers"><h2>המספרים של יוסטון</h2>
+    <p>הנתונים כאן מחושבים על ידינו מסדרות רשמיות. מדד המחירים (FHFA) בנוי ממכירות חוזרות של <b>בתים חד-משפחתיים בלבד</b> - בדיוק סוג הנכס שבמודל:</p>
+    <div class="stats">
+      <div><b>‎+5.5%‎ לשנה</b><span>מחירי בתים חד-משפחתיים ביוסטון - ממוצע 10 שנים (FHFA)</span></div>
+      <div><b>‎+3.3%‎ לשנה</b><span>שכר דירה ביוסטון - ממוצע 10 שנים (BLS)</span></div>
+      <div><b>‎7.3M+‎ תושבים</b><span>מטרו יוסטון; גידול של כ-20% בעשור (Census)</span></div>
+      <div><b>‎$362K‎</b><span>מחיר מבוקש חציוני ביוסטון, יוני 2026 (Realtor.com)</span></div>
+    </div>
+    <svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff;border:1px solid #e6edf0;border-radius:14px" role="img" aria-label="מחירי בתים מול שכר דירה ביוסטון">
+<line x1="60" y1="281" x2="690" y2="281" stroke="#e6edf0"/><text x="52" y="285" font-size="12" fill="#7c8a91" text-anchor="end">100</text>
+<line x1="60" y1="205" x2="690" y2="205" stroke="#e6edf0"/><text x="52" y="209" font-size="12" fill="#7c8a91" text-anchor="end">200</text>
+<line x1="60" y1="129" x2="690" y2="129" stroke="#e6edf0"/><text x="52" y="133" font-size="12" fill="#7c8a91" text-anchor="end">300</text>
+<line x1="60" y1="52" x2="690" y2="52" stroke="#e6edf0"/><text x="52" y="56" font-size="12" fill="#7c8a91" text-anchor="end">400</text>
+<text x="60" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">1995</text>
+<text x="162" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2000</text>
+<text x="263" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2005</text>
+<text x="365" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2010</text>
+<text x="466" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2015</text>
+<text x="568" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2020</text>
+<text x="690" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2026</text>
+<polyline points="60.0,280.8 80.3,277.5 100.6,277.3 121.0,272.6 141.3,268.0 161.6,260.6 181.9,253.8 202.3,249.8 222.6,244.8 242.9,241.1 263.2,236.0 283.5,229.4 303.9,222.6 324.2,217.4 344.5,214.5 364.8,217.5 385.2,219.5 405.5,217.3 425.8,211.2 446.1,198.3 466.5,181.9 486.8,174.1 507.1,165.8 527.4,157.3 547.7,149.2 568.1,139.7 588.4,129.3 608.7,89.3 629.0,69.9 649.4,57.1 669.7,48.4 690.0,44.3" fill="none" stroke="#1d4e5d" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="60.0,280.8 80.3,279.0 100.6,277.2 121.0,275.4 141.3,271.4 161.6,268.9 181.9,266.2 202.3,262.2 222.6,258.0 242.9,256.4 263.2,255.6 283.5,255.1 303.9,251.6 324.2,249.8 344.5,245.2 364.8,242.7 385.2,241.8 405.5,239.9 425.8,234.5 446.1,229.8 466.5,222.1 486.8,213.8 507.1,207.0 527.4,205.5 547.7,203.4 568.1,199.1 588.4,196.1 608.7,190.6 629.0,174.3 649.4,165.0 669.7,163.9 690.0,159.3" fill="none" stroke="#36a7da" stroke-width="3" stroke-dasharray="7 5" stroke-linejoin="round"/>
+<text x="686" y="34" font-size="14" font-weight="700" fill="#1d4e5d" text-anchor="end">‎×4.1‎</text>
+<text x="686" y="149" font-size="14" font-weight="700" fill="#36a7da" text-anchor="end">‎×2.6‎</text>
+<rect x="60" y="348" width="14" height="4" fill="#1d4e5d"/><text x="80" y="354" font-size="12.5" fill="#3a4a52">מדד מחירי בתים - יוסטון (FHFA)</text>
+<rect x="310" y="348" width="14" height="4" fill="#36a7da"/><text x="330" y="354" font-size="12.5" fill="#3a4a52">מדד שכר דירה - יוסטון (BLS)</text>
+</svg>
+    <p style="margin-top:14px">מאז 1995 מחירי הבתים ביוסטון עלו פי 4.1, ושכר הדירה פי 2.6 בלבד. הפער בין הקווים הוא הסיפור: לרכוש בית נהיה קשה יותר מלשכור אותו, ולכן חלק גדל של משפחות נשאר בשכירות - הבסיס לביקוש שעליו נשען המודל.</p>
+    <h3 class="subhead">ולמה יוסטון ולא אוסטין? כי יציבות מנצחת בועה</h3>
+    <svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff;border:1px solid #e6edf0;border-radius:14px" role="img" aria-label="יוסטון מול אוסטין - מחירי בתים חד-משפחתיים">
+<line x1="60" y1="267" x2="690" y2="267" stroke="#e6edf0"/><text x="52" y="271" font-size="12" fill="#7c8a91" text-anchor="end">100</text>
+<line x1="60" y1="195" x2="690" y2="195" stroke="#e6edf0"/><text x="52" y="199" font-size="12" fill="#7c8a91" text-anchor="end">125</text>
+<line x1="60" y1="123" x2="690" y2="123" stroke="#e6edf0"/><text x="52" y="127" font-size="12" fill="#7c8a91" text-anchor="end">150</text>
+<line x1="60" y1="51" x2="690" y2="51" stroke="#e6edf0"/><text x="52" y="55" font-size="12" fill="#7c8a91" text-anchor="end">175</text>
+<text x="60" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2019</text>
+<text x="150" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2020</text>
+<text x="240" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2021</text>
+<text x="330" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2022</text>
+<text x="420" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2023</text>
+<text x="510" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2024</text>
+<text x="600" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2025</text>
+<text x="690" y="318" font-size="12" fill="#7c8a91" text-anchor="middle">2026</text>
+<polyline points="60.0,267.2 82.5,260.8 105.0,256.6 127.5,253.8 150.0,248.7 172.5,243.8 195.0,237.7 217.5,226.5 240.0,212.1 262.5,172.2 285.0,133.0 307.5,118.7 330.0,97.7 352.5,57.0 375.0,60.0 397.5,88.5 420.0,96.1 442.5,102.3 465.0,105.1 487.5,117.0 510.0,109.2 532.5,111.5 555.0,112.6 577.5,118.6 600.0,113.3 622.5,113.7 645.0,114.9 667.5,115.6 690.0,116.9" fill="none" stroke="#c77b30" stroke-width="3" stroke-dasharray="7 5" stroke-linejoin="round"/>
+<polyline points="60.0,267.2 82.5,262.6 105.0,259.8 127.5,258.7 150.0,254.1 172.5,249.9 195.0,247.9 217.5,243.7 240.0,239.5 262.5,225.8 285.0,211.6 307.5,199.7 330.0,184.0 352.5,169.9 375.0,157.7 397.5,157.2 420.0,157.1 442.5,148.5 465.0,145.5 487.5,146.7 510.0,139.3 532.5,139.4 555.0,131.3 577.5,129.2 600.0,127.3 622.5,130.8 645.0,124.7 667.5,122.3 690.0,121.5" fill="none" stroke="#1d4e5d" stroke-width="3" stroke-linejoin="round"/>
+<text x="352" y="47" font-size="12.5" font-weight="700" fill="#c77b30" text-anchor="middle">‎+73%‎</text>
+<text x="686" y="143" font-size="13" font-weight="700" fill="#1d4e5d" text-anchor="end">‎+50%‎</text>
+<rect x="60" y="348" width="14" height="4" fill="#1d4e5d"/><text x="80" y="354" font-size="12.5" fill="#3a4a52">יוסטון - עלייה מדורגת</text>
+<rect x="310" y="348" width="14" height="4" fill="#c77b30"/><text x="330" y="354" font-size="12.5" fill="#3a4a52">אוסטין - זינוק, ירידה וקיפאון</text>
+</svg>
+    <p style="margin-top:14px">שתי הערים הגיעו כמעט לאותה עליית ערך מצטברת מאז 2019 - אבל בדרכים הפוכות: אוסטין זינקה כ-73% עד אמצע 2022, ירדה כ-12% מהשיא וקפאה מאז; יוסטון עלתה מדורג לאורך כל הדרך, בלי שנה שלילית אחת. כשמחזיקים נכס לטווח ארוך, הדרך חשובה לא פחות מהיעד.</p>
+    <p class="src">מקורות: FRED, הבנק הפדרלי של סנט לואיס - מדדי מחירי בתים חד-משפחתיים (FHFA, מכירות חוזרות):
+    יוסטון <a href="https://fred.stlouisfed.org/series/ATNHPIUS26420Q" target="_blank" rel="noopener">ATNHPIUS26420Q</a>,
+    אוסטין <a href="https://fred.stlouisfed.org/series/ATNHPIUS12420Q" target="_blank" rel="noopener">ATNHPIUS12420Q</a>;
+    מדד שכר דירה <a href="https://fred.stlouisfed.org/series/CUURA318SEHA" target="_blank" rel="noopener">CUURA318SEHA</a> (BLS);
+    אוכלוסייה <a href="https://fred.stlouisfed.org/series/HTNPOP" target="_blank" rel="noopener">HTNPOP</a> (Census);
+    מחיר מבוקש חציוני <a href="https://fred.stlouisfed.org/series/MEDLISPRI26420" target="_blank" rel="noopener">MEDLISPRI26420</a> (Realtor.com).
+    בגרף הראשון שני המדדים מנורמלים ל-100 בשנת 1995; בגרף השני - ל-100 בתחילת 2019. נתוני 2026 - רבעון ראשון. עיבוד וחישוב: Aspect, יולי 2026.</p></section>
 </main>
 
 <div class="cta">
