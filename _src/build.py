@@ -203,6 +203,12 @@ background:#2a8c5e;color:#fff;font-weight:600;font-size:15.5px;text-decoration:n
 .wa-line:active{{transform:scale(.97)}}
 .wa-line svg{{width:18px;height:18px}}
 @media(min-width:600px){{figure img{{height:300px}} body{{font-size:18.5px}}}}
+@media(min-width:900px){{
+.topbar .in{{padding:12px 20px}}
+.topbar img.a{{height:32px}} .topbar img.p{{height:40px}}
+.hero{{height:46vh;min-height:420px;max-height:560px}}
+}}
+.tb-center{{justify-content:center;gap:34px}}
 @media print{{.progress,.topbar,.cta .btns{{display:none}} .hero{{min-height:auto}} section{{break-inside:avoid}}}}
 """
 
@@ -226,7 +232,7 @@ gtag('js',new Date());gtag('config','G-S1E7F8WCWF',{{page_title:'{ga_page_title}
 <style>{CSS}{extra_css}</style>
 </head>"""
 
-TOPBAR = f"""<header class="topbar"><div class="in">
+TOPBAR = f"""<header class="topbar"><div class="in tb-center">
   <img class="a" src="{LOGO_ASPECT}" alt="Aspect Boutique Investments">
   <img class="p" src="{LOGO_PRIME}" alt="PrimeVest Realty">
 </div></header>"""
@@ -381,7 +387,7 @@ border-radius:14px;padding:14px 16px}
 .cta>*{position:relative}
 figure.pano img{height:130px}
 @media(min-width:600px){figure.pano img{height:175px}}
-.hero{min-height:auto}
+.hero{min-height:auto;height:auto;max-height:none}
 .hero .in{padding:32px 22px 28px}
 .hero h1{font-size:clamp(28px,7vw,50px)}
 .hero-btns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
