@@ -398,7 +398,7 @@ HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים
 <div class="progress" id="pg"></div>
 {TOPBAR}
 
-{hero_block('בית בנוי, בעלות עצמאית ותהליך מסודר - בכמה דקות קריאה')}
+{hero_block('בית בנוי, בעלות עצמאית ותהליך מסודר')}
 
 <main>
   <section style="padding-top:26px">{GOLD_CARDS}</section>
