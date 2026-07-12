@@ -290,7 +290,7 @@ HTML = f"""{page_head('בתים חדשים מקבלנים ציבוריים בט�
 <div class="progress" id="pg"></div>
 {TOPBAR}
 
-{hero_block('כיצד הגענו למודל, ומה מצאנו בדרך')}
+{hero_block('כיצד הגענו למודל, ומה מצאנו בדרך', bg=GEN_STREET, bg_alt='רחוב בשכונת בתים חדשים באזור יוסטון')}
 
 <main>
   <section>{paras(intro)}</section>
