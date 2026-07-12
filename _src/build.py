@@ -41,10 +41,9 @@ LOGO_PRIME  = b64_img('image2.png', jpeg=False)
 HERO        = b64_img('image3.jpg', max_w=1280, quality=74)  # Houston skyline
 AERIAL      = b64_img('image7.jpg', max_w=1100, quality=72)  # master-planned aerial
 STREET      = b64_img('image5.jpg', max_w=1100, quality=72)  # new-home street
-# תמונות הבתים שרכשנו (מפרסומי המכירה ב-Zillow) - לעמוד המקוצר בלבד
-Z_EXT1      = b64_img('zillow-ext1.jpg', max_w=900, quality=72)
-Z_EXT2      = b64_img('zillow-ext2.jpg', max_w=900, quality=72)
-Z_INTERIOR  = b64_img('zillow-interior.jpg', max_w=1100, quality=72)
+# הדמיית הבית (Zillow) - מטושטשת, רקע ל-CTA של העמוד המקוצר בלבד (החלטת יוסי 12/07:
+# הדמיות חצי-כוח, לא מדגישים - אווירה בלבד)
+Z_CTA_BLUR  = b64_img('zillow-cta-blur.jpg', max_w=900, quality=70)
 
 CHECK = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'"
          "%3E%3Cpath fill='none' stroke='%2336a7da' stroke-width='3' stroke-linecap='round'"
@@ -372,12 +371,9 @@ ol.steps li{font-size:17px;line-height:1.75}
 border-radius:14px;padding:14px 16px}
 .gold b{display:block;color:var(--teal);font-size:clamp(16px,4.2vw,19px);line-height:1.35;margin-bottom:5px}
 .gold span{font-size:14.5px;color:var(--body);line-height:1.6;display:block}
-.homes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.homes figure{margin:0;border-radius:16px}
-.homes figure img{height:170px}
-.homes figure.wide{grid-column:1/-1}
-.homes figure.wide img{height:220px}
-.homes figcaption{font-size:13.5px;color:var(--muted);padding:8px 12px;background:var(--tint)}
+.cta{position:relative;overflow:hidden}
+.cta img.ctabg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32}
+.cta>*{position:relative}
 .hero{min-height:auto}
 .hero .in{padding:32px 22px 28px}
 .hero h1{font-size:clamp(28px,7vw,50px)}
@@ -439,16 +435,10 @@ HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים
   <section><h2>איך זה עובד בפועל</h2><p>{s_steps_intro}</p>{stepslist(s_steps)}
     <div class="callout">{s_steps_close}</div></section>
   <section><h2>כמה דברים שחשוב לקחת בחשבון</h2><div class="note">{paras(s_consider)}</div></section>
-  <section><h2>כך זה נראה בפועל</h2>
-    <p>מתוך הבתים הראשונים שרכשנו בעצמנו - התמונות כפי שפורסמו למכירה.</p>
-    <div class="homes">
-      <figure><img src="{Z_EXT1}" alt="חזית בית חד-משפחתי חדש שרכשנו"><figcaption>בית שרכשנו - החזית</figcaption></figure>
-      <figure><img src="{Z_EXT2}" alt="חזית בית חד-משפחתי חדש נוסף שרכשנו"><figcaption>בית נוסף שרכשנו</figcaption></figure>
-      <figure class="wide"><img src="{Z_INTERIOR}" alt="מטבח ופינת אוכל בבית חדש"><figcaption>המרחב המרכזי: מטבח ופינת אוכל</figcaption></figure>
-    </div></section>
 </main>
 
 <div class="cta">
+  <img class="ctabg" src="{Z_CTA_BLUR}" alt="" aria-hidden="true">
   <h2>רוצים את התמונה המלאה?</h2>
   <p>{s_full_invite}</p>
   <div class="btns">
