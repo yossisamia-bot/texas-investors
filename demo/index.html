@@ -126,12 +126,12 @@ border-radius:14px;padding:15px 16px}
     <p style="margin-top:14px">אף אחת מהטעויות האלה לא הופכת השקעה לרעה בהכרח - אבל כולן יחד מסבירות למה בנינו את המודל בדיוק כך.</p></section>
 
   <section><h2>המספרים של יוסטון</h2>
-    <p>ארבעה נתונים שמחזיקים את הסיפור - מחושבים על ידינו מסדרות רשמיות, לא מועתקים מאף מצגת:</p>
+    <p>הנתונים כאן מחושבים על ידינו מסדרות רשמיות - לא מועתקים מאף מצגת. ומדד המחירים שבחרנו (FHFA) בנוי ממכירות חוזרות של <b>בתים חד-משפחתיים בלבד</b> - בדיוק סוג הנכס שבמודל:</p>
     <div class="stats">
-      <div><b>‎+5.5%‎ לשנה</b><span>מחירי בתים ביוסטון - ממוצע 10 שנים (FHFA)</span></div>
+      <div><b>‎+5.5%‎ לשנה</b><span>מחירי בתים חד-משפחתיים ביוסטון - ממוצע 10 שנים (FHFA)</span></div>
       <div><b>‎+3.3%‎ לשנה</b><span>שכר דירה ביוסטון - ממוצע 10 שנים (BLS)</span></div>
       <div><b>‎7.3M+‎ תושבים</b><span>מטרו יוסטון; גידול של כ-20% בעשור (Census)</span></div>
-      <div><b>‎×4.1 מול ×2.6‎</b><span>מחירי בתים מול שכר דירה מאז 1995 - הפער שדוחף משפחות לשכירות</span></div>
+      <div><b>‎$362K‎</b><span>מחיר מבוקש חציוני ביוסטון, יוני 2026 (Realtor.com)</span></div>
     </div>
     <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff;border:1px solid #e6edf0;border-radius:14px" role="img" aria-label="מחירי בתים מול שכר דירה ביוסטון">
 <line x1="60" y1="284" x2="690" y2="284" stroke="#e6edf0" stroke-width="1"/><text x="52" y="288" font-size="12" fill="#7c8a91" text-anchor="end">100</text>
@@ -152,12 +152,36 @@ border-radius:14px;padding:15px 16px}
 <rect x="60" y="325" width="14" height="4" fill="#1d4e5d"/><text x="80" y="331" font-size="12.5" fill="#3a4a52">מדד מחירי בתים - יוסטון (FHFA)</text>
 <rect x="300" y="325" width="14" height="4" fill="#36a7da"/><text x="320" y="331" font-size="12.5" fill="#3a4a52">מדד שכר דירה - יוסטון (BLS)</text>
 </svg>
-    <p style="margin-top:14px">הפער בין הקווים הוא הסיפור: מחירי הבתים עלו כמעט פי שניים יותר משכר הדירה, ולכן חלק גדל של משפחות נשאר בשכירות - הבסיס לביקוש שעליו נשען המודל.</p>
-    <p class="src">מקורות: FRED, הבנק הפדרלי של סנט לואיס - מדד מחירי בתים
-    <a href="https://fred.stlouisfed.org/series/ATNHPIUS26420Q" target="_blank" rel="noopener">ATNHPIUS26420Q</a> (FHFA),
-    מדד שכר דירה <a href="https://fred.stlouisfed.org/series/CUURA318SEHA" target="_blank" rel="noopener">CUURA318SEHA</a> (BLS),
-    אוכלוסייה <a href="https://fred.stlouisfed.org/series/HTNPOP" target="_blank" rel="noopener">HTNPOP</a> (Census).
-    שני המדדים בגרף מנורמלים ל-100 בשנת 1995; נתוני 2026 - רבעון ראשון. עיבוד וחישוב: Aspect, יולי 2026.</p></section>
+    <p style="margin-top:14px">מאז 1995 מחירי הבתים עלו פי 4.1 ושכר הדירה פי 2.6 בלבד. הפער בין הקווים הוא הסיפור: לרכוש בית נהיה קשה יותר מלשכור אותו, ולכן חלק גדל של משפחות נשאר בשכירות - הבסיס לביקוש שעליו נשען המודל.</p>
+    <h3 style="font-size:19px;color:var(--teal);margin:26px 0 10px;font-weight:800">ולמה יוסטון ולא אוסטין? כי יציבות מנצחת בועה</h3>
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff;border:1px solid #e6edf0;border-radius:14px" role="img" aria-label="יוסטון מול אוסטין - מחירי בתים חד-משפחתיים">
+<line x1="60" y1="271" x2="690" y2="271" stroke="#e6edf0" stroke-width="1"/><text x="52" y="275" font-size="12" fill="#7c8a91" text-anchor="end">100</text>
+<line x1="60" y1="197" x2="690" y2="197" stroke="#e6edf0" stroke-width="1"/><text x="52" y="201" font-size="12" fill="#7c8a91" text-anchor="end">125</text>
+<line x1="60" y1="123" x2="690" y2="123" stroke="#e6edf0" stroke-width="1"/><text x="52" y="127" font-size="12" fill="#7c8a91" text-anchor="end">150</text>
+<line x1="60" y1="49" x2="690" y2="49" stroke="#e6edf0" stroke-width="1"/><text x="52" y="53" font-size="12" fill="#7c8a91" text-anchor="end">175</text>
+<text x="60" y="322" font-size="12" fill="#7c8a91" text-anchor="middle">2019</text>
+<text x="150" y="322" font-size="12" fill="#7c8a91" text-anchor="middle">2020</text>
+<text x="240" y="322" font-size="12" fill="#7c8a91" text-anchor="middle">2021</text>
+<text x="330" y="322" font-size="12" fill="#7c8a91" text-anchor="middle">2022</text>
+<text x="420" y="322" font-size="12" fill="#7c8a91" text-anchor="middle">2023</text>
+<text x="510" y="322" font-size="12" fill="#7c8a91" text-anchor="middle">2024</text>
+<text x="600" y="322" font-size="12" fill="#7c8a91" text-anchor="middle">2025</text>
+<text x="690" y="322" font-size="12" fill="#7c8a91" text-anchor="middle">2026</text>
+<polyline points="60.0,270.5 82.5,264.0 105.0,259.7 127.5,256.9 150.0,251.6 172.5,246.7 195.0,240.5 217.5,228.9 240.0,214.2 262.5,173.5 285.0,133.4 307.5,118.8 330.0,97.3 352.5,55.8 375.0,58.8 397.5,87.9 420.0,95.7 442.5,102.1 465.0,104.9 487.5,117.1 510.0,109.1 532.5,111.4 555.0,112.6 577.5,118.7 600.0,113.3 622.5,113.7 645.0,115.0 667.5,115.7 690.0,116.9" fill="none" stroke="#c77b30" stroke-width="3" stroke-dasharray="7 5" stroke-linejoin="round"/>
+<polyline points="60.0,270.5 82.5,265.9 105.0,263.0 127.5,261.9 150.0,257.1 172.5,252.9 195.0,250.8 217.5,246.5 240.0,242.3 262.5,228.2 285.0,213.7 307.5,201.6 330.0,185.6 352.5,171.1 375.0,158.7 397.5,158.2 420.0,158.0 442.5,149.3 465.0,146.2 487.5,147.4 510.0,139.9 532.5,139.9 555.0,131.7 577.5,129.6 600.0,127.6 622.5,131.2 645.0,125.0 667.5,122.5 690.0,121.7" fill="none" stroke="#1d4e5d" stroke-width="3" stroke-linejoin="round"/>
+<text x="352" y="46" font-size="12.5" font-weight="700" fill="#c77b30" text-anchor="middle">שיא אוסטין ‎+73%‎ ואז ירידה</text>
+<text x="684" y="142" font-size="13" font-weight="700" fill="#1d4e5d" text-anchor="end">יוסטון ‎+50%‎ מדורג</text>
+<rect x="60" y="325" width="14" height="4" fill="#1d4e5d"/><text x="80" y="331" font-size="12.5" fill="#3a4a52">יוסטון</text>
+<rect x="170" y="325" width="14" height="4" fill="#c77b30"/><text x="190" y="331" font-size="12.5" fill="#3a4a52">אוסטין</text>
+</svg>
+    <p style="margin-top:14px">שתי הערים הגיעו כמעט לאותה עליית ערך מצטברת מאז 2019 - אבל בדרכים הפוכות: אוסטין זינקה כ-73% עד אמצע 2022, ירדה כ-12% מהשיא וקפאה מאז; יוסטון עלתה מדורג לאורך כל הדרך, בלי שנה שלילית אחת. כשמחזיקים נכס לטווח ארוך, הדרך חשובה לא פחות מהיעד.</p>
+    <p class="src">מקורות: FRED, הבנק הפדרלי של סנט לואיס - מדדי מחירי בתים חד-משפחתיים (FHFA, מכירות חוזרות):
+    יוסטון <a href="https://fred.stlouisfed.org/series/ATNHPIUS26420Q" target="_blank" rel="noopener">ATNHPIUS26420Q</a>,
+    אוסטין <a href="https://fred.stlouisfed.org/series/ATNHPIUS12420Q" target="_blank" rel="noopener">ATNHPIUS12420Q</a>;
+    מדד שכר דירה <a href="https://fred.stlouisfed.org/series/CUURA318SEHA" target="_blank" rel="noopener">CUURA318SEHA</a> (BLS);
+    אוכלוסייה <a href="https://fred.stlouisfed.org/series/HTNPOP" target="_blank" rel="noopener">HTNPOP</a> (Census);
+    מחיר מבוקש חציוני <a href="https://fred.stlouisfed.org/series/MEDLISPRI26420" target="_blank" rel="noopener">MEDLISPRI26420</a> (Realtor.com).
+    בגרף הראשון שני המדדים מנורמלים ל-100 בשנת 1995; בגרף השני - ל-100 בתחילת 2019. נתוני 2026 - רבעון ראשון. עיבוד וחישוב: Aspect, יולי 2026.</p></section>
 
   <section><h2>למי המודל מתאים</h2>
     <p>המודל נבנה עבור משקיע שמעריך בעלות ושליטה, חושב בטווח של שנים ולא של חודשים, ורוצה תהליך מלווה שבו כתובת אחת אחראית לחבר את כל החלקים - נכס, חברה, בנק, מימון, ביטוח, שוכר וניהול.</p>
