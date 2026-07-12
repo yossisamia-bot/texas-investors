@@ -1,0 +1,36 @@
+{
+  "_source": "FRED (fred.stlouisfed.org), retrieved 2026-07-12 via browser same-origin fetch",
+  "_series": {
+    "hpi": "ATNHPIUS26420Q - All-Transactions House Price Index, Houston-The Woodlands-Sugar Land MSA (FHFA), Index 1995:Q1=100, quarterly. Q1 values per year below.",
+    "rent_cpi": "CUURA318SEHA - CPI Rent of Primary Residence, Houston CBSA (BLS), Index 1982-84=100, monthly. January values per year below.",
+    "population": "HTNPOP - Resident Population, Houston MSA (Census), thousands, annual (ends 2022).",
+    "days_on_market": "MEDDAYONMAR26420 - Median Days on Market, Houston CBSA (Realtor.com), monthly."
+  },
+  "hpi_q1": {
+    "1995": 100.00, "1996": 104.30, "1997": 104.56, "1998": 110.74, "1999": 116.82,
+    "2000": 126.49, "2001": 135.41, "2002": 140.74, "2003": 147.33, "2004": 152.15,
+    "2005": 158.82, "2006": 167.54, "2007": 176.39, "2008": 183.26, "2009": 187.03,
+    "2010": 183.17, "2011": 180.55, "2012": 183.38, "2013": 191.41, "2014": 208.43,
+    "2015": 229.94, "2016": 240.12, "2017": 251.04, "2018": 262.21, "2019": 272.90,
+    "2020": 285.30, "2021": 299.05, "2022": 351.58, "2023": 377.06, "2024": 393.87,
+    "2025": 405.26, "2026": 410.73
+  },
+  "rent_jan": {
+    "1995": 128.100, "1996": 131.100, "1997": 134.100, "1998": 137.100, "1999": 143.900,
+    "2000": 148.100, "2001": 152.600, "2002": 159.300, "2003": 166.400, "2004": 169.200,
+    "2005": 170.500, "2006": 171.300, "2007": 177.154, "2008": 180.183, "2009": 187.990,
+    "2010": 192.159, "2011": 193.713, "2012": 196.903, "2013": 205.905, "2014": 213.874,
+    "2015": 226.876, "2016": 240.843, "2017": 252.228, "2018": 254.775, "2019": 258.278,
+    "2020": 265.653, "2021": 270.643, "2022": 279.905, "2023": 307.306, "2024": 323.007,
+    "2025": 324.878, "2026": 332.601
+  },
+  "rent_latest": {"2026-05": 328.688},
+  "population_msa_thousands": {"2000": 4739.414, "2010": 5947.185, "2015": 6670.803, "2020": 7140.749, "2022": 7340.118},
+  "days_on_market_recent": {"2025-07": 50, "2025-12": 64, "2026-03": 50, "2026-06": 50},
+  "_rm_claims_check": {
+    "rent_growth_3.2pct": "CONFIRMED-ish: 10yr CAGR 3.3%, 30yr 3.1%",
+    "price_growth_5pct": "CONFIRMED-ish: 10yr CAGR 5.4%, 30yr 4.7%",
+    "days_25_30": "NOT for sales (median ~50 days, Realtor.com); likely rental days-to-lease",
+    "occupancy_92.2pct": "not independently verified - no clean metro series located"
+  }
+}
