@@ -341,6 +341,7 @@ require_headings(SS, EXPECTED_SHORT, 'presentation-short.docx')
 
 s_model_pre     = SS['המודל בקצרה']['pre']
 s_model_bullets = SS['המודל בקצרה']['bullets']
+s_model_post    = SS['המודל בקצרה']['post']
 s_whytx         = SS['למה טקסס, ולמה דווקא עכשיו']['pre']
 s_new_intro     = SS['למה בית חדש']['pre'][0]
 s_new_bullets   = SS['למה בית חדש']['bullets']
@@ -400,7 +401,7 @@ GOLD_CARDS = """<div class="gold">
   <div><b>בית חדש בנוי - מקבלן ציבורי ענק</b><span>קבלן נסחר בבורסה; נכס מוכן שאפשר לבדוק, לממן ולאכלס</span></div>
   <div><b>מימון עד 70% כבר ברכישה</b><span>משכנתא על שם ה-LLC בקנייה עצמה, לא ריפייננס - הון עצמי סביב $90K, בכפוף לאישור מלווה</span></div>
   <div><b>חד-משפחתי, לא תלוי באחרים</b><span>בית שלם בבעלות אחת - בלי שותפים ובלי תלות במשקיעים אחרים</span></div>
-  <div><b>ניהול ותיווך, עם דובר עברית</b><span>מוצאים שוכר ומנהלים בשטח; נציג דובר עברית מגיע לישראל באופן קבוע</span></div>
+  <div><b>ניהול ותיווך, עם מענה בעברית</b><span>איתור שוכרים, גבייה ותחזוקה בשטח - וכתובת ברורה לתקשורת פשוטה</span></div>
   <div><b>אוטונומיה מלאה: LLC וחשבון פרטיים</b><span>חברה וחשבון בנק בבעלות המשקיע - לא קרן ולא קופה משותפת</span></div>
   <div><b>שכונות נבחרות בצמיחה</b><span>ביקוש לשכירות, תעסוקה, נגישות והמשך אכלוס</span></div>
 </div>"""
@@ -428,6 +429,7 @@ HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים
   <section id="brief" style="padding-top:26px">{GOLD_CARDS}</section>
   <section><h2>המודל בקצרה</h2>{paras([('lead', s_model_pre[0])] + [('', p) for p in s_model_pre[1:]])}
     {cards(s_model_bullets)}
+    <div style="margin-top:16px">{paras(s_model_post)}</div>
     <figure><img src="{AERIAL}" alt="שכונה חדשה ומתוכננת באזור יוסטון"></figure></section>
   <section><h2>למה טקסס, ולמה דווקא עכשיו</h2>{paras(s_whytx)}</section>
   <section><h2>למה בית חדש</h2>
