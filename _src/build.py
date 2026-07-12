@@ -227,14 +227,14 @@ TOPBAR = f"""<header class="topbar"><div class="in">
   <img class="p" src="{LOGO_PRIME}" alt="PrimeVest Realty">
 </div></header>"""
 
-def hero_block(sub):
+def hero_block(sub, extra=''):
     return f"""<div class="hero">
   <img class="bg" src="{HERO}" alt="Houston skyline">
   <div class="gr"></div>
   <div class="in">
     <span class="eyebrow">Aspect × PrimeVest Realty</span>
     <h1>בתים חדשים מקבלנים<br>ציבוריים בטקסס</h1>
-    <div class="sub">{sub}</div>
+    <div class="sub">{sub}</div>{extra}
   </div>
 </div>"""
 
@@ -377,9 +377,21 @@ border-radius:14px;padding:14px 16px}
 .homes figure.wide{grid-column:1/-1}
 .homes figure.wide img{height:220px}
 .homes figcaption{font-size:13.5px;color:var(--muted);padding:8px 12px;background:var(--tint)}
+.hero{min-height:auto}
+.hero .in{padding:32px 22px 28px}
+.hero h1{font-size:clamp(28px,7vw,50px)}
+.hero-btns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.hbtn{display:flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:12px;
+font-weight:700;font-size:16px;text-decoration:none;flex:1 1 auto;transition:transform .12s}
+.hbtn:active{transform:scale(.98)}
+.hbtn.solid{background:#fff;color:var(--teal)}
+.hbtn.ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.07)}
+.tb-full{background:var(--teal-deep);color:#fff;font-weight:700;font-size:14px;padding:8px 18px;
+border-radius:30px;text-decoration:none;white-space:nowrap}
 @media(min-width:600px){section{padding:56px 0} figure img{height:340px}
 .gold{gap:14px;grid-template-columns:1fr 1fr 1fr} .gold div{padding:17px 19px}
-.homes{gap:16px} .homes figure img{height:230px} .homes figure.wide img{height:300px}}
+.homes{gap:16px} .homes figure img{height:230px} .homes figure.wide img{height:300px}
+.hero-btns{max-width:440px}}
 """
 
 # כרטיסי הזהב למסך הפתיחה (סט הזהב של יוסי 12/07/2026 - 6 כרטיסים, כלום לא נגרע:
@@ -393,15 +405,27 @@ GOLD_CARDS = """<div class="gold">
   <div><b>שכונות נבחרות בצמיחה</b><span>ביקוש לשכירות, תעסוקה, נגישות והמשך אכלוס</span></div>
 </div>"""
 
+# פס עליון לעמוד המקוצר: לוגו + כפתור "לאתר המלא" (כמו ברפרנס)
+TOPBAR_SHORT = f"""<header class="topbar"><div class="in">
+  <img class="a" src="{LOGO_ASPECT}" alt="Aspect Boutique Investments">
+  <a class="tb-full" href="{FULL_URL}" onclick="gtag('event','tool_click',{{tool:'full_version_top'}})">לאתר המלא</a>
+</div></header>"""
+
+HERO_BTNS = f"""
+<div class="hero-btns">
+  <a class="hbtn solid" href="{FULL_URL}" onclick="gtag('event','tool_click',{{tool:'full_version_hero'}})">מעבר לאתר המלא</a>
+  <a class="hbtn ghost" href="#brief">הסבר קצר</a>
+</div>"""
+
 HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים בטקסס - בקצרה | Aspect × PrimeVest', 'Texas Investors Short', CSS_SHORT)}
 <body>
 <div class="progress" id="pg"></div>
-{TOPBAR}
+{TOPBAR_SHORT}
 
-{hero_block('בית בנוי, בעלות עצמאית ותהליך מסודר')}
+{hero_block('בית בנוי, בעלות עצמאית ותהליך מסודר', HERO_BTNS)}
 
 <main>
-  <section style="padding-top:26px">{GOLD_CARDS}</section>
+  <section id="brief" style="padding-top:26px">{GOLD_CARDS}</section>
   <section><h2>המודל בקצרה</h2>{paras([('lead', s_model_pre[0])] + [('', p) for p in s_model_pre[1:]])}
     {cards(s_model_bullets)}
     <figure><img src="{AERIAL}" alt="שכונה חדשה ומתוכננת באזור יוסטון"></figure></section>
