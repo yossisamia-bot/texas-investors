@@ -344,7 +344,7 @@ s_new_close     = SS['למה בית חדש']['post'][0]
 s_steps_intro   = SS['איך זה עובד בפועל']['pre'][0]
 s_steps         = SS['איך זה עובד בפועל']['bullets']
 s_steps_close   = SS['איך זה עובד בפועל']['post'][0]
-s_consider      = SS['כמה דברים שחשוב לקחת בחשבון']['pre'][0]
+s_consider      = SS['כמה דברים שחשוב לקחת בחשבון']['pre']
 s_full_invite   = SS['רוצים את התמונה המלאה?']['pre'][0]
 s_disclaimer    = SS['גילוי נאות ודיסקליימר']['pre'][0]
 
@@ -362,17 +362,31 @@ section{padding:42px 0}
 ul.cards li{font-size:17px;line-height:1.75}
 ol.steps li{font-size:17px;line-height:1.75}
 .callout,.note{font-size:17.5px}
-@media(min-width:600px){section{padding:56px 0} figure img{height:340px}}
+.gold{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 4px}
+.gold div{background:var(--tint);border:1px solid var(--line);border-right:4px solid var(--blue);
+border-radius:14px;padding:14px 16px}
+.gold b{display:block;color:var(--teal);font-size:clamp(16px,4.2vw,19px);line-height:1.35;margin-bottom:5px}
+.gold span{font-size:14.5px;color:var(--body);line-height:1.6;display:block}
+@media(min-width:600px){section{padding:56px 0} figure img{height:340px} .gold{gap:14px} .gold div{padding:17px 19px}}
 """
+
+# כרטיסי הזהב למסך הפתיחה (הנוסח המלוטש, הווריאציות המומלצות - 12/07/2026)
+GOLD_CARDS = """<div class="gold">
+  <div><b>הון עצמי סביב $90K</b><span>היתרה נבחנת במימון על שם ה-LLC, בכפוף לאישור מלווה</span></div>
+  <div><b>בית חדש, בנוי ומוכן</b><span>נכס קיים שאפשר לבדוק, לממן ולהעביר לניהול</span></div>
+  <div><b>בעלות עצמאית, לא קרן</b><span>ה-LLC בבעלות המשקיע, והבית רשום על שם החברה</span></div>
+  <div><b>שכונות נבחרות בצמיחה</b><span>לפי ביקוש לשכירות, תעסוקה, נגישות והמשך אכלוס</span></div>
+</div>"""
 
 HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים בטקסס - בקצרה | Aspect × PrimeVest', 'Texas Investors Short', CSS_SHORT)}
 <body>
 <div class="progress" id="pg"></div>
 {TOPBAR}
 
-{hero_block('התמונה בקצרה - עיקרי המודל בכמה דקות קריאה')}
+{hero_block('בית בנוי, בעלות עצמאית ותהליך מסודר - בכמה דקות קריאה')}
 
 <main>
+  <section style="padding-top:26px">{GOLD_CARDS}</section>
   <section><h2>המודל בקצרה</h2>{paras([('lead', s_model_pre[0])] + [('', p) for p in s_model_pre[1:]])}
     {cards(s_model_bullets)}
     <figure><img src="{AERIAL}" alt="שכונה חדשה ומתוכננת באזור יוסטון"></figure></section>
@@ -383,7 +397,7 @@ HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים
     <p style="margin-top:18px">{s_new_close}</p></section>
   <section><h2>איך זה עובד בפועל</h2><p>{s_steps_intro}</p>{stepslist(s_steps)}
     <div class="callout">{s_steps_close}</div></section>
-  <section><h2>כמה דברים שחשוב לקחת בחשבון</h2><div class="note">{s_consider}</div></section>
+  <section><h2>כמה דברים שחשוב לקחת בחשבון</h2><div class="note">{paras(s_consider)}</div></section>
 </main>
 
 <div class="cta">
