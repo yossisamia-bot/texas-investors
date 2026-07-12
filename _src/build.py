@@ -398,6 +398,22 @@ font-weight:700;font-size:16px;text-decoration:none;flex:1 1 auto;transition:tra
 .hbtn.ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.07)}
 .tb-full{background:var(--teal-deep);color:#fff;font-weight:700;font-size:14px;padding:8px 18px;
 border-radius:30px;text-decoration:none;white-space:nowrap}
+.keycard{display:none}
+@media(min-width:900px){
+.hero.hero2{min-height:620px;max-height:none;display:flex;align-items:center}
+.hero .in2{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;
+max-width:1120px;padding:56px 34px;width:100%}
+.glass{background:rgba(10,30,37,.55);backdrop-filter:blur(8px);border-radius:22px;padding:38px 40px;
+border:1px solid rgba(255,255,255,.08)}
+.keycard{display:block;background:#fff;border-radius:22px;padding:26px;
+box-shadow:0 30px 60px -20px rgba(10,30,37,.6);max-width:430px;justify-self:start}
+.kc-logo{height:36px;margin:8px auto 20px;display:block}
+.kc{background:var(--tint);border:1px solid var(--line);border-radius:14px;padding:14px 17px;margin-bottom:12px}
+.kc:last-child{margin-bottom:0}
+.kc b{display:block;color:var(--teal);font-size:18px;margin-bottom:3px}
+.kc span{font-size:14px;color:var(--body);line-height:1.55;display:block}
+.hero-btns{max-width:none}
+}
 @media(min-width:600px){section{padding:56px 0} figure img{height:340px}
 .gold{gap:14px;grid-template-columns:1fr 1fr 1fr} .gold div{padding:17px 19px}
 .homes{gap:16px} .homes figure img{height:230px} .homes figure.wide img{height:300px}
@@ -427,12 +443,31 @@ HERO_BTNS = f"""
   <a class="hbtn ghost" href="#brief">הסבר קצר</a>
 </div>"""
 
+# HERO דחוס לעמוד המקוצר: בנייד - כמו קודם; בדסקטופ - פאנל זכוכית + כרטיס-מפתח לבן (בהשראת הרפרנס, 12/07)
+HERO_SHORT = f"""<div class="hero hero2">
+  <img class="bg" src="{GEN_STREET}" alt="רחוב בשכונת בתים חדשים באזור יוסטון">
+  <div class="gr"></div>
+  <div class="in in2">
+    <div class="glass">
+      <span class="eyebrow">Aspect × PrimeVest Realty</span>
+      <h1>בתים חדשים מקבלנים<br>ציבוריים בטקסס</h1>
+      <div class="sub">בית בנוי, בעלות עצמאית ותהליך מסודר</div>{HERO_BTNS}
+    </div>
+    <div class="keycard">
+      <img class="kc-logo" src="{LOGO_ASPECT}" alt="Aspect Boutique Investments">
+      <div class="kc"><b>מימון עד 70% כבר ברכישה</b><span>הון עצמי סביב $90K, בכפוף לאישור מלווה</span></div>
+      <div class="kc"><b>בית חדש, בנוי ומוכן</b><span>מקבלן ציבורי גדול הנסחר בבורסה</span></div>
+      <div class="kc"><b>LLC וחשבון פרטיים</b><span>בעלות מלאה ועצמאית - לא קרן ולא קופה משותפת</span></div>
+    </div>
+  </div>
+</div>"""
+
 HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים בטקסס - בקצרה | Aspect × PrimeVest', 'Texas Investors Short', CSS_SHORT)}
 <body>
 <div class="progress" id="pg"></div>
 {TOPBAR_SHORT}
 
-{hero_block('בית בנוי, בעלות עצמאית ותהליך מסודר', HERO_BTNS, bg=GEN_STREET, bg_alt='רחוב בשכונת בתים חדשים באזור יוסטון')}
+{HERO_SHORT}
 
 <main>
   <section id="brief" style="padding-top:26px">{GOLD_CARDS}</section>
