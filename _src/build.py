@@ -368,7 +368,7 @@ STATS_SECTION = f"""<section id="numbers"><h2>המספרים של יוסטון</
 intro_paras, S = parse_master(MASTER)
 EXPECTED = ['מה למדנו בדרך', 'מה מצאנו בטקסס', 'ההיגיון מאחורי הבחירה בבתים חדשים',
             'המודל שבנינו סביב הנכס', 'התפקיד שלנו בתהליך', 'חשוב להבהיר', 'איך זה עובד בפועל',
-            'איך אנחנו מסתכלים על ההשקעה', 'כמה דברים שחשוב לקחת בחשבון', 'איך ממשיכים מכאן',
+            'איך אנחנו מסתכלים על הרכישה', 'כמה דברים שחשוב לקחת בחשבון', 'איך ממשיכים מכאן',
             'גילוי נאות ודיסקליימר']
 require_headings(S, EXPECTED, 'presentation.docx')
 
@@ -384,7 +384,7 @@ clarify       = S['חשוב להבהיר']['pre'][0]
 steps_intro   = S['איך זה עובד בפועל']['pre'][0]
 steps         = S['איך זה עובד בפועל']['bullets']
 steps_close   = S['איך זה עובד בפועל']['post'][0]
-view          = S['איך אנחנו מסתכלים על ההשקעה']['pre']
+view          = S['איך אנחנו מסתכלים על הרכישה']['pre']
 consider      = S['כמה דברים שחשוב לקחת בחשבון']['pre']
 nextsteps     = S['איך ממשיכים מכאן']['pre']
 disclaimer    = S['גילוי נאות ודיסקליימר']['pre'][0]
@@ -410,7 +410,7 @@ HTML = f"""{page_head('בתים חדשים מקבלנים ציבוריים בט�
   <section><h2>חשוב להבהיר</h2><div class="note">{clarify}</div></section>
   <section><h2>איך זה עובד בפועל</h2><p>{steps_intro}</p>{stepslist(steps)}
     <div class="callout">{steps_close}</div></section>
-  <section><h2>איך אנחנו מסתכלים על ההשקעה</h2>{paras(view)}</section>
+  <section><h2>איך אנחנו מסתכלים על הרכישה</h2>{paras(view)}</section>
   <section><h2>כמה דברים שחשוב לקחת בחשבון</h2>{paras(consider)}</section>
   <section><h2>איך ממשיכים מכאן</h2>{paras(nextsteps)}</section>
   {STATS_SECTION}
@@ -420,8 +420,8 @@ HTML = f"""{page_head('בתים חדשים מקבלנים ציבוריים בט�
   <h2>רוצים להעמיק במספרים?</h2>
   <p>שני כלים אינטראקטיביים שבנינו כדי ללוות את הבדיקה:</p>
   <div class="btns">
-    <a class="btn solid" href="https://yossisamia-bot.github.io/prop-compare/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'calculator'}})">מחשבון השוואת השקעה</a>
-    <a class="btn solid" href="https://yossisamia-bot.github.io/houston-map/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'map'}})">מפת ההשקעות ביוסטון</a>
+    <a class="btn solid" href="https://yossisamia-bot.github.io/prop-compare/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'calculator'}})">מחשבון השוואה כלכלית</a>
+    <a class="btn solid" href="https://yossisamia-bot.github.io/houston-map/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'map'}})">מפת האזורים ביוסטון</a>
   </div>
   {WA_BTN}
 </div>
@@ -524,9 +524,9 @@ box-shadow:0 30px 60px -20px rgba(10,30,37,.6);max-width:430px;justify-self:star
 GOLD_CARDS = """<div class="gold">
   <div><b>בית חדש בנוי - מקבלן ציבורי ענק</b><span>קבלן נסחר בבורסה; בודקים, מממנים ומאכלסים - בלי המתנה לבנייה</span></div>
   <div><b>מימון עד 70% כבר ברכישה</b><span>משכנתא על שם ה-LLC בקנייה עצמה, לא ריפייננס - הון עצמי סביב $90K, בכפוף לאישור מלווה</span></div>
-  <div><b>חד-משפחתי, לא תלוי באחרים</b><span>בית שלם בבעלות אחת - בלי שותפים ובלי תלות במשקיעים אחרים</span></div>
+  <div><b>חד-משפחתי, לא תלוי באחרים</b><span>בית שלם בבעלות אחת - בלי שותפים ובלי תלות ברוכשים אחרים</span></div>
   <div><b>ניהול ותיווך, עם מענה בעברית</b><span>איתור שוכרים, גבייה ותחזוקה בשטח - וכתובת ברורה לתקשורת פשוטה</span></div>
-  <div><b>אוטונומיה מלאה: LLC וחשבון פרטיים</b><span>חברה וחשבון בנק בבעלות המשקיע - לא קרן ולא קופה משותפת</span></div>
+  <div><b>אוטונומיה מלאה: LLC וחשבון פרטיים</b><span>חברה וחשבון בנק בבעלות הרוכש - לא קרן ולא קופה משותפת</span></div>
   <div><b>קהילות-ענק מתוכננות (Master-Planned)</b><span>קומפלקסים של מאות בתים עם פארקים, אגמים, שבילים ומתקני קהילה</span></div>
 </div>"""
 
@@ -592,8 +592,8 @@ HTML_SHORT = f"""{page_head('בתים חדשים מקבלנים ציבוריים
   <p>{s_full_invite}</p>
   <div class="btns">
     <a class="btn solid" href="{FULL_URL}" onclick="gtag('event','tool_click',{{tool:'full_version'}})">למסמך המלא והמפורט</a>
-    <a class="btn ghost" href="https://yossisamia-bot.github.io/prop-compare/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'calculator'}})">מחשבון השוואת השקעה</a>
-    <a class="btn ghost" href="https://yossisamia-bot.github.io/houston-map/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'map'}})">מפת ההשקעות ביוסטון</a>
+    <a class="btn ghost" href="https://yossisamia-bot.github.io/prop-compare/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'calculator'}})">מחשבון השוואה כלכלית</a>
+    <a class="btn ghost" href="https://yossisamia-bot.github.io/houston-map/" target="_blank" rel="noopener" onclick="gtag('event','tool_click',{{tool:'map'}})">מפת האזורים ביוסטון</a>
   </div>
   {WA_BTN}
 </div>
